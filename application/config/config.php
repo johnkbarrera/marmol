@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$config['modules_locations'] = array(
+    APPPATH.'modules/' => '../modules/',
+);
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:80/marmol/'; //localhost:8080/marmool/      x          www.jkn.com
+$config['base_url'] = 'http://localhost/jkn/'; //localhost:8080/marmool/      x          www.jkn.com
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +327,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '1234567890';
 
 /*
 |--------------------------------------------------------------------------
