@@ -26,7 +26,7 @@ $config['modules_locations'] = array(
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/jkn/'; //localhost:8080/marmool/      x          www.jkn.com
+$config['base_url'] = 'http://localhost/marmol/'; //localhost:8080/marmool/      x          www.jkn.com
 
 /*
 |--------------------------------------------------------------------------
