@@ -7,13 +7,13 @@ class Login extends MX_Controller {
 	public function index()
  	{
 		if (isset($_POST['password'])) {
-			$this->load->model('Usuario_model');
-			if($this->Usuario_model->login($_POST['username'],md5($_POST['password']))){
+			$this->load->model('usuario_model');
+			if($this->usuario_model->login($_POST['email'],md5($_POST['password']))){
 				redirect('welcome');
 			}else{
-				redirect('login0');
+				redirect('login#bad-password');
 			}
 		}
- 		$this->load->view('login0');
+ 		$this->load->view('login');
  	}
 }

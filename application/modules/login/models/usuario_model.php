@@ -10,10 +10,10 @@ class Usuario_model extends CI_Model {
         parent::_construct();
   }
 
-  public function login($username,$password)
+  public function login($usermail,$password)
  	{
     /*nos devuelve algo?*/
- 		$this->db->where('nameUsers', $username);
+ 		$this->db->where('emailUsers', $usermail);
     $this->db->where('passUsers', $password);
     //return $this->db->get('Users');
     $q = $this->db->get('Users');
@@ -23,5 +23,4 @@ class Usuario_model extends CI_Model {
       return false;
     }
  	}
-
 }
