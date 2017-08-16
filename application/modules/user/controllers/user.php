@@ -25,6 +25,8 @@ class User extends MX_Controller {
 				redirect('login#bad-password');
 			}
 		}
+
+		
  		$this->load->view('register');
 
 
