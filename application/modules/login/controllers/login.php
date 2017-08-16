@@ -17,6 +17,10 @@ class Login extends MX_Controller {
 		}
  		$this->load->view('login');
  	}*/
+
+
+
+
 	public function index()
  	{
 		if($this->session->userdata('email')){
@@ -40,5 +44,14 @@ class Login extends MX_Controller {
 		$this->session->sess_destroy();
 		redirect(base_url());
  	}
+
+	public function begin_password_reset()
+	{
+		if($this->session->userdata('email')){
+			redirect(base_url());
+		}
+		
+		print "aun no disponible";
+	}
 
 }
