@@ -70,13 +70,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
+	<?php if($this->session->userdata('emailUsers')) :?>
+  	<h1><li><a href="<?= site_url('login/logout')?>"> Salir</a></li></h1>
+	<?php else ?>
+		<h1><li><a href="<?= site_url('login')?>"> Ingresar</a></li></h1>
+	<?php endif; ?>
+
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
 		hola todos xd
 		<a href="<?= base_url()?>">link</a>
 
-		mmm
 
 		<p>If you would like to edit this page you'll find it located at:</p>
 		<code>application/views/welcome_message.php</code>
