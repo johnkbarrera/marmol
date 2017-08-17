@@ -3,11 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario_model extends CI_Model {
 
-  public $variable;
-
   public function _construct()
   {
-        parent::_construct();
+    parent::construct();
   }
 
   public function login($usermail,$password)

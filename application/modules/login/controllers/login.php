@@ -3,24 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends MX_Controller {
 
-
-	/*public function index()
- 	{
-
-		if (isset($_POST['password'])) {
-			$this->load->model('usuario_model');
-			if($this->usuario_model->login($_POST['email'],md5($_POST['password']))){
-				redirect('Welcome');
-			}else{
-				redirect('login#bad-password');
-			}
-		}
- 		$this->load->view('login');
- 	}*/
-
-
-
-
+	public function _construct()
+	{
+		parent::_construct();
+	}
 	public function index()
  	{
 		if($this->session->userdata('email')){
@@ -31,7 +17,7 @@ class Login extends MX_Controller {
 			$this->load->model('usuario_model');
 			if($this->usuario_model->login($_POST['email'],md5($_POST['password']))){
 				$this->session->set_userdata('email',$_POST['email']);
-				redirect(base_url());
+				redirect(base_url());                                                    //redirecciona al panel del usuario
 			}else{
 				redirect('login#bad-password');
 			}
@@ -50,7 +36,7 @@ class Login extends MX_Controller {
 		if($this->session->userdata('email')){
 			redirect(base_url());
 		}
-		
+
 		print "aun no disponible";
 	}
 
