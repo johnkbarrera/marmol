@@ -50,6 +50,7 @@ class Account extends MX_Controller {
 				echo "erros datos no guardados";
 			}
 		}else {
+			$this->abc();
 			echo validation_errors();																									//		Mensaje de alerta
 		}
 
@@ -58,4 +59,14 @@ class Account extends MX_Controller {
 
 
 	}
+
+	public function abc(){
+		echo "hola pe DORAEMON";
+	}
+
+	public function crear_btc(){
+		// POR IMPLEMENTAR
+
+	}
+
 }
