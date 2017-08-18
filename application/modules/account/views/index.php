@@ -33,26 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -92,7 +73,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="<?= base_url()?>plantillas/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -240,12 +221,11 @@ desired effect
         </div>
       </div>
 
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Billetera</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
@@ -260,6 +240,7 @@ desired effect
         </li>
       </ul>
       <!-- /.sidebar-menu -->
+
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -281,10 +262,361 @@ desired effect
     <!-- Main content -->
     <section class="content container-fluid">
 
+    <!-- Info boxes -->
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Bitcoin</span>
+              <span class="info-box-number">90<small>%</small></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Likes</span>
+              <span class="info-box-number">41,410</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Sales</span>
+              <span class="info-box-number">760</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">New Members</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <div class="box box-success box-solid">
+              <div class="box-header">
+                <h3 class="box-title">Moneda</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <table class="table table-striped"> 
+                  <tr>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>                
+                  </tr>              
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/USD.jpg">
+                    </td>
+                    <td>USD</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="USD">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/EUR.jpg">
+                    </td>
+                    <td>EUR</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="EUR">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/ARS.jpg">
+                    </td>
+                    <td>ARS</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="ARS">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/BOB.jpg">
+                    </td>
+                    <td>BOB</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BOB">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/BRL.jpg">
+                    </td>
+                    <td>BRL</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BRL">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/BSF.jpg">
+                    </td>
+                    <td>BSF</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BSF">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/CLP.jpg">
+                    </td>
+                    <td>CLP</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CLP">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/CNY.jpg">
+                    </td>
+                    <td>CNY</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CNY">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/COP.jpg">
+                    </td>
+                    <td>COP</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="COP">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/PEN.jpg">
+                    </td>
+                    <td>PEN</td>
+                    <td>0.00</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="PEN">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- /.box-body -->
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center" >
+          <div class="box box-success box-solid">
+              <div class="box-header">
+                <h3 class="box-title">Criptomoneda</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <table class="table table-striped">
+                  <tr>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 20px"></th> 
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/BTC.jpg">
+                    </td>
+                    <td>BTC</td>
+                    <td>0.00000000</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="BTC">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/ETH.jpg">
+                    </td>
+                    <td>ETH</td>
+                    <td>0.00000000</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="ETH">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/LTC.jpg">
+                    </td>
+                    <td>LTC</td>
+                    <td>0.00000000</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="LTC">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="<?= base_url()?>plantillas/dist/img/currency/XMR.jpg">
+                    </td>
+                    <td>XMR</td>
+                    <td>0.00000000</td>
+                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="XMR">Depósito</button></td>
+                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- /.box-body -->
+          </div>        
+        </div>
+        
+      </div>
+
+      <div class="modal modal-info fade"  id="modal-deposito-moneda">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >Depósito en</h4>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="bancos" class="form-control-label">Nombre del Banco</label>
+                    <select class="form-control" style="width: 100%;" id="bancos">
+                        <option selected="selected">Seleccionar</option>
+                        <option>Interbank</option>
+                        <option>BBVA Continental</option>
+                        <option>Banco de la Nacion</option>
+                        <option>BCP</option>
+                        <option>Scotiabank</option>                    
+                      </select>                 
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cantidad" class="form-control-label">Cantidad</label>
+                    <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">  
+                  </div>
+
+                  <div class="form-group">
+                    <label for="comision" class="form-control-label">Comisión</label>
+                    <input type="text" class="form-control" id="comision" disabled value="0.01">  
+                  </div>
+
+                  <div class="form-group">
+                    <label for="total" class="form-control-label">Total</label>
+                    <input type="text" class="form-control" id="total" disabled value="0">  
+                  </div>                  
+                </form>               
+              
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-outline">Ingresar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+
+      <div class="modal modal-info fade"  id="modal-deposito-cripto">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Depósito en</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-6 text-center">
+                      <img src="<?= base_url()?>plantillas/dist/img/ejemplo-qr.jpg">                    
+                    </div>
+                    <div class="col-sm-6" align="justify">
+                      <p>La mínima cantidad de depósito es de 0.0001 BTC.</p>                    
+                    </div>                
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-sm-12 text-center">
+                      <br>
+                      <br>
+                      <h3><kbd>34Lw9feJRyEmPvL6ATBr3BroyGtKipMkz4</kbd></h3>                              
+                    </div>                                
+                  </div>                  
+                </div>
+                
+
+              
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+                <!--button type="button" class="btn btn-outline">Ingresar</button-->
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+
+      <div class="modal modal-info fade" id="modal-retiro">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Info Modal</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-outline">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+      
+
+
+
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
 
+    </section>
+    <section>
+
+
+      
     </section>
     <!-- /.content -->
   </div>
@@ -387,6 +719,25 @@ desired effect
 <script src="<?= base_url()?>plantillas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url()?>plantillas/dist/js/adminlte.min.js"></script>
+
+<script>
+
+$('#modal-deposito-moneda').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var currency = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Depósito ' + currency)  
+})
+
+$('#modal-deposito-cripto').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var currency = button.data('whatever') 
+  var modal = $(this)
+  modal.find('.modal-title').text('Depósito ' + currency)  
+})
+</script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

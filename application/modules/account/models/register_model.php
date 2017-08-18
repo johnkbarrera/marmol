@@ -19,7 +19,8 @@ class Register_model extends CI_Model {
       'nickUsers' => $nombres,
       'passUsers' => $pass,
       'estadoUsers' => "VALIDADO",
-      'dateUsers' => date("Y-m-d H:i:s")
+      'dateUsers' => date("Y-m-d H:i:s"),
+      'Prolifes_idProlifes' => 1
      );
     return $this->db->insert("Users",$data);
  	}
