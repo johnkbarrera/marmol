@@ -17,7 +17,7 @@ class Login extends MX_Controller {
 			$this->load->model('usuario_model');
 			if($this->usuario_model->login($_POST['email'],md5($_POST['password']))){
 				$this->session->set_userdata('email',$_POST['email']);
-				redirect(base_url());                                                    //redirecciona al panel del usuario
+				redirect(base_url(account));                                                    //redirecciona al panel del usuario
 			}else{
 				redirect('login#bad-password');
 			}

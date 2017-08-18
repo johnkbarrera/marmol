@@ -11,13 +11,18 @@ class Account extends MX_Controller {
 
 	public function index()
  	{
-		$this->load->view('index');
+		if(!$this->session->userdata('email')){																			//si no estoy logeado
+			redirect(base_url(login));
+		}else {
+			$this->load->view('index');
+		}
+
  	}
 
 	public function register()
 	{
 
-		if($this->session->userdata('email')){
+		if($this->session->userdata('email')){ 																		  //SI ESTOY LOGEADO
 			redirect(base_url());
 		}
 
@@ -29,10 +34,12 @@ class Account extends MX_Controller {
 		$this->form_validation->set_rules('pass2', 'Pass2', 'required');
 		if ($this->form_validation->run())
 		{
-			echo "Success";
-			$data = $this->input->post();
+			$nombres = $this->input->post('nombres');
+			$apellidos = $this->input->post('apellidos');
+			$email = $this->input->post('email');
+			$pass = md5($this->input->post('pass1'));
 			$this->load->model('register_model');
-			if ($this->register_model->saveRecord($data))
+			if ($this->register_model->saveRecord($nombres,$apellidos,$email,$pass))
 			{
 				//$this->session->set_flashdata("response","Registro exitoso!");
 				$this->session->set_userdata('email',$_POST['email']);
