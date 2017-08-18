@@ -16,7 +16,7 @@ class Register_model extends CI_Model {
       'nombresUsers' => $nombres,
       'apellidosUsers' => $apellidos,
       'emailUsers' => $email,
-      'tagUsers' => $nombres,
+      'nickUsers' => $nombres,
       'passUsers' => $pass,
       'estadoUsers' => "VALIDADO",
       'dateUsers' => date("Y-m-d H:i:s")
