@@ -19,8 +19,20 @@ class Account extends MX_Controller {
 
  	}
 
-	public function register()
-	{
+	public function validate(){
+		/*if(!$this->session->userdata('email')){																			//si no estoy logeado en session
+			redirect(base_url(login));
+		}else {								*/
+			$this->load->view('validar');
+			$aleatorio = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			echo "string  ".$aleatorio;
+			$mail="johnkevinbarrera@gmail.com";
+			$this->enviarmail($mail,$aleatorio);
+		//}
+
+ 	}
+
+	public function register(){
 
     //$this->validador_propio->una_function(); // prueba
 
@@ -45,43 +57,43 @@ class Account extends MX_Controller {
 			$email = $this->input->post('email');
 			$pass = md5($this->input->post('pass1'));
 
-
 			if ($this->help_model->unique_email($email)) {
-				echo "email ya existe";
-				redirect(base_url("/account#email_ existe"));
+				redirect(base_url("/account#email_ existe"));														//	MOSTRAR MENSAJE DE ALERTA "EMAIL YA REGISTRADO"
 			}
 
-
-						if ($this->register_model->saveRecord($nombres,$apellidos,$email,$pass))
-						{
-
-
-							//$this->session->set_flashdata("response","Registro exitoso!");
-							//$this->session->set_userdata('email',$_POST['email']);
-						//	redirect(base_url());
-						}else {
+			if ($this->register_model->saveRecord($nombres,$apellidos,$email,$pass)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
+			 		redirect(base_url("/account/validate"));															//	REDIRIGIMOS PARA PODER VALIDAR LA CUENTA
+			}else {
 							//$this->session->set_flashdata("response","Registro Fallido!");
 							//redirect('#bad-password');
 							echo "erros datos no guardados";
-						}
-
-
-
+			}
 		}else {
 			echo validation_errors();																									//		Mensaje de alerta
 		}
-
-
  		$this->load->view('register');
-
-
 	}
-
-
 
 	public function crear_btc(){
 		// POR IMPLEMENTAR
 
 	}
+
+	public function enviarmail($aemail,$codigo){
+		$this->email->from('jk.barrerac@up.edu.pe', 'Your Name');
+		$this->email->to($aemail);
+
+		$this->email->subject('Codigo de verificación');
+		$this->email->message('tu codigo de verificacion marmol es: '.$codigo);
+
+		if ($this->email->send()) {
+			echo "enviado papus";
+			return 1;
+		}else {
+			echo $this->email->print_debugger();
+			return 0;
+		}
+	}
+
 
 }

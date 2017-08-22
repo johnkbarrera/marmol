@@ -23,126 +23,42 @@
 
 
 
+        <!-- Info boxes -->
+          <div class="row">
+            <!-- /.col -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
-
-
-
-
-
-
-
-        <div class="box box-primary" style="position: relative; left: 0px; top: 0px;">
-            <div class="box-header ui-sortable-handle" style="cursor: move;">
-              <i class="ion ion-clipboard"></i>
-
-              <h3 class="box-title">To Do List</h3>
-
-              <div class="box-tools pull-right">
-                <ul class="pagination pagination-sm inline">
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
+                <div class="info-box-content">
+                  <span class="info-box-text">New Members</span>
+                  <span class="info-box-number">2,000</span>
+                </div>
+                <!-- /.info-box-content -->
               </div>
+              <!-- /.info-box -->
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
-              <ul class="todo-list ui-sortable">
-                <li>
-                  <!-- drag handle -->
-                  <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Design a nice theme</span>
-                  <!-- Emphasis label -->
-                  <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Make the theme responsive</span>
-                  <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Check your messages and notifications</span>
-                  <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <!-- /.col -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-gear-outline"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">New Members</span>
+                  <span class="info-box-number">2,000</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-            </div>
+            <!-- /.col -->
           </div>
-
-
+          <!-- /.row -->
 
 
 
@@ -200,137 +116,162 @@
                   <input type="checkbox" value="">
                 </td>
               </tr>
+
               <tr>
                 <td>Trident</td>
                 <td>Internet
                   Explorer 4.0
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
+                <td>
+                  <input type="checkbox" value="">
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
+                <td>
+                  <input type="checkbox" value="">
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
+                <td>
+                  <input type="checkbox" value="">
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
+                <td>
+                  <input type="checkbox" value="">
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>y</td>
               </tr>
 
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+                <td>
+                  <input type="checkbox" value="">
+                </td>
+              </tr>
+
+
+
+              
 
 
               </tbody>
