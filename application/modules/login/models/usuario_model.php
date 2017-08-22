@@ -21,4 +21,16 @@ class Usuario_model extends CI_Model {
       return false;
     }
  	}
+
+
+
+  public function state_account($usermail)
+ 	{
+    $this->db->where('emailUsers', $usermail);
+    $resp = $this->db->get('Users')->row();
+    $r = $resp->stateUsers;
+    echo $r;
+    return $r;
+ 	}
+
 }

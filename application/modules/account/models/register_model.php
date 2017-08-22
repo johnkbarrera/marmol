@@ -13,15 +13,18 @@ class Register_model extends CI_Model {
   public function saveRecord($nombres,$apellidos,$email,$pass)
  	{
     $data = array(
-      'nombresUsers' => $nombres,
-      'apellidosUsers' => $apellidos,
+      'fnameUsers' => $nombres,
+      'lnameUsers' => $apellidos,
       'emailUsers' => $email,
       'nickUsers' => $nombres,
       'passUsers' => $pass,
-      'estadoUsers' => "VALIDADO",
+      'stateUsers' => "VALIDADO",
       'dateUsers' => date("Y-m-d H:i:s"),
       'Prolifes_idProlifes' => 1
      );
     return $this->db->insert("Users",$data);
  	}
+
+  
+
 }

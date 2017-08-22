@@ -158,14 +158,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?= base_url()?>plantillas/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="https://lh3.googleusercontent.com/3VsHI8kQgaPSvVzp8LXbUTmtESbHWTXL5HjnI690jxuBWy0Vw3sUA30rOz51bjGgXELZ=s85" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?= base_url()?>plantillas/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="https://lh3.googleusercontent.com/3VsHI8kQgaPSvVzp8LXbUTmtESbHWTXL5HjnI690jxuBWy0Vw3sUA30rOz51bjGgXELZ=s85" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -192,7 +192,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
-                <div class="pull-right">                  
+                <div class="pull-right">
                   <a href="<?= base_url('login/logout')?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
@@ -331,14 +331,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <!-- /.box-header -->
               <div class="box-body no-padding">
-                <table class="table table-striped"> 
+                <table class="table table-striped">
                   <tr>
                     <th style="width: 20px"></th>
                     <th style="width: 20px"></th>
                     <th style="width: 20px"></th>
                     <th style="width: 20px"></th>
-                    <th style="width: 20px"></th>                
-                  </tr>              
+                    <th style="width: 20px"></th>
+                  </tr>
                   <tr>
                     <td>
                       <img src="<?= base_url()?>plantillas/dist/img/currency/USD.jpg">
@@ -447,7 +447,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th style="width: 20px"></th>
                     <th style="width: 20px"></th>
                     <th style="width: 20px"></th>
-                    <th style="width: 20px"></th> 
+                    <th style="width: 20px"></th>
                   </tr>
                   <tr>
                     <td>
@@ -488,9 +488,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </table>
               </div>
               <!-- /.box-body -->
-          </div>        
+          </div>
         </div>
-        
+
       </div>
 
       <div class="modal modal-info fade"  id="modal-deposito-moneda">
@@ -511,26 +511,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <option>BBVA Continental</option>
                         <option>Banco de la Nacion</option>
                         <option>BCP</option>
-                        <option>Scotiabank</option>                    
-                      </select>                 
+                        <option>Scotiabank</option>
+                      </select>
                   </div>
 
                   <div class="form-group">
                     <label for="cantidad" class="form-control-label">Cantidad</label>
-                    <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">  
+                    <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
                   </div>
 
                   <div class="form-group">
                     <label for="comision" class="form-control-label">Comisión</label>
-                    <input type="text" class="form-control" id="comision" disabled value="0.01">  
+                    <input type="text" class="form-control" id="comision" disabled value="0.01">
                   </div>
 
                   <div class="form-group">
                     <label for="total" class="form-control-label">Total</label>
-                    <input type="text" class="form-control" id="total" disabled value="0">  
-                  </div>                  
-                </form>               
-              
+                    <input type="text" class="form-control" id="total" disabled value="0">
+                  </div>
+                </form>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
@@ -554,25 +554,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="row">
                   <div class="form-group">
                     <div class="col-sm-6 text-center">
-                      <img src="<?= base_url()?>plantillas/dist/img/ejemplo-qr.jpg">                    
+                      <img src="<?= base_url()?>plantillas/dist/img/ejemplo-qr.jpg">
                     </div>
                     <div class="col-sm-6" align="justify">
-                      <p>La mínima cantidad de depósito es de 0.0001 BTC.</p>                    
-                    </div>                
+                      <p>La mínima cantidad de depósito es de 0.0001 BTC.</p>
+                    </div>
                   </div>
-                </div> 
+                </div>
                 <div class="row">
                   <div class="form-group">
                     <div class="col-sm-12 text-center">
                       <br>
                       <br>
-                      <h3><kbd>34Lw9feJRyEmPvL6ATBr3BroyGtKipMkz4</kbd></h3>                              
-                    </div>                                
-                  </div>                  
+                      <h3><kbd>34Lw9feJRyEmPvL6ATBr3BroyGtKipMkz4</kbd></h3>
+                    </div>
+                  </div>
                 </div>
-                
 
-              
+
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
@@ -604,7 +604,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.modal-dialog -->
       </div>
-      
+
 
 
 
@@ -616,7 +616,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <section>
 
 
-      
+
     </section>
     <!-- /.content -->
   </div>
@@ -728,14 +728,14 @@ $('#modal-deposito-moneda').on('show.bs.modal', function (event) {
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
-  modal.find('.modal-title').text('Depósito ' + currency)  
+  modal.find('.modal-title').text('Depósito ' + currency)
 })
 
 $('#modal-deposito-cripto').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) 
-  var currency = button.data('whatever') 
+  var button = $(event.relatedTarget)
+  var currency = button.data('whatever')
   var modal = $(this)
-  modal.find('.modal-title').text('Depósito ' + currency)  
+  modal.find('.modal-title').text('Depósito ' + currency)
 })
 </script>
 

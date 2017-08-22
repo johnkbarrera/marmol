@@ -211,7 +211,7 @@ desired effect
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
-                <div class="pull-right">                  
+                <div class="pull-right">
                   <a href="<?= base_url('login/logout')?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
@@ -231,7 +231,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?= base_url()?>plantillas/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="https://lh3.googleusercontent.com/3VsHI8kQgaPSvVzp8LXbUTmtESbHWTXL5HjnI690jxuBWy0Vw3sUA30rOz51bjGgXELZ=s85" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>

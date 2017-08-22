@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Ingrese para iniciar sesión</p>
 
     <form action="" method="post"> <!--   plantillas/index2.html  -->
       <div class="form-group has-feedback">
@@ -45,14 +45,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="pass" class="form-control" placeholder="Contraseña">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox"> Recordarme
             </label>
           </div>
         </div>
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </form>
 
     <div class="social-auth-links text-center">
-      <p>- OR -</p>
+      <p>- O -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
@@ -73,8 +73,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <!-- /.social-auth-links -->
 
-    <a href="<?= base_url('login/begin_password_reset')?>">I forgot my password</a><br>
-    <a href="<?= base_url('account/register')?>" class="text-center">Register a new membership</a>
+    <a href="<?= base_url('login/begin_password_reset')?>">Olvide mi contraseña</a><br>
+    <a href="<?= base_url('account/register')?>" class="text-center">¿Aún no estás en Marmol? Registrarte</a>
 
   </div>
   <!-- /.login-box-body -->

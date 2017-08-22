@@ -34,7 +34,7 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">¿Aún no estás en Marmol? Registrarte</p>
 
     <form action="" method="post">
       <div class="form-group has-feedback">
@@ -50,18 +50,18 @@
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="pass1" class="form-control" placeholder="Password">
+        <input type="password" name="pass1" class="form-control" placeholder="Contraseña">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="pass2" class="form-control" placeholder="Retype password">
+        <input type="password" name="pass2" class="form-control" placeholder="Repetir Contraseña">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
+              <input type="checkbox"> Acepto los <a href="#">termimos y condiciones</a>
             </label>
           </div>
         </div>
@@ -74,14 +74,14 @@
     </form>
 
     <div class="social-auth-links text-center">
-      <p>- OR -</p>
+      <p>- O -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
         Google+</a>
     </div>
 
-    <a href="<?= base_url('login')?>" class="text-center">I already have a membership</a>
+    <a href="<?= base_url('login')?>" class="text-center">Tengo una cuenta registrada</a>
   </div>
   <!-- /.form-box -->
 </div>
