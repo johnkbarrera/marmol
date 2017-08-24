@@ -31,9 +31,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
+<div class="container">
+  <?php $msm = $this->session->flashdata("response");
+        if ($msm != "Email no identificado"): ?>
+    <div class="callout callout-success">
+      <?php echo $msm." para el email ".$this->session->flashdata("email"); ?>
+    </div>
+  <?php else: ?>
+    <div class="callout callout-danger">
+      <?php echo $msm; ?>
+    </div>
+  <?php endif; ?>
+</div>
+
 <div class="login-box">
   <div class="login-logo">
-
     <b>Verifica tu identidad</b>
   </div>
   <!-- /.login-logo -->

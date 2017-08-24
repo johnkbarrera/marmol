@@ -7,10 +7,7 @@ class Validador_propio{
    }
 
    //funciones que queremos implementar en Miclase.
-   function enviar_mail($data){
-
-   }
-
+   
    ////////////////////////////////////////////////////
   //Convierte fecha de mysql a español
   ////////////////////////////////////////////////////

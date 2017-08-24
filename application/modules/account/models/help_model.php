@@ -25,5 +25,19 @@ class Help_model extends CI_Model {
       return false;
     }
  	}
+  
+  public function codigo_confirmacion($usermail)
+ 	{
+    $this->db->where('emailUsers', $usermail);
+    $resp = $this->db->get('Users')->row();
+    return $resp->auxUsers;;
+ 	}
 
+  public function state_account($usermail)
+ 	{
+    $this->db->where('emailUsers', $usermail);
+    $resp = $this->db->get('Users')->row();
+    $r = $resp->stateUsers;
+    return $r;
+ 	}
 }
