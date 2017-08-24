@@ -33,8 +33,8 @@ class Login extends MX_Controller {
 			$pass = md5($this->input->post('pass'));
 
 			if($this->help_model->state_account($email)=="NO CONFIRMADO"){												//	VERIFICAMOS (X EMAIL) SI LA CUENTA A SIDO CONFIRMADA
-				redirect('login#account_unconfirmed');
-				//llamamas a una fuincion para validar
+				$this->session->set_flashdata("response",$email);
+				redirect(base_url("/account/confirmate"));								//llamamas a una fuincion para confirmar
 			}
 
 

@@ -4,14 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Register_model extends CI_Model {
 
 
-  public function getRecords()
-  {
+  public function getRecords(){
         $query = $this->db->get("Users");
         return $query->result();
   }
 
-  public function save_noconfirmed($nombres,$apellidos,$email,$pass)
- 	{
+  public function save_noconfirmed($nombres,$apellidos,$email,$pass){
     $data = array(
       'fnameUsers' => $nombres,
       'lnameUsers' => $apellidos,
@@ -26,14 +24,14 @@ class Register_model extends CI_Model {
     return $this->db->insert("Users",$data);
  	}
 
-  public function save_confirmed($aemail) {
-        $data = array(
-            'stateUsers' => "CONFIRMADO",
-            'auxUsers' => "0"
-        );
-        $this->db->where('emailUsers', $aemail);
-        return $this->db->update('Users', $data);
-    }
+  public function save_confirmed($aemail){
+    $data = array(
+      'stateUsers' => "CONFIRMADO",
+      'auxUsers' => "0"
+    );
+    $this->db->where('emailUsers', $aemail);
+    return $this->db->update('Users', $data);
+  }
 
 
 

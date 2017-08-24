@@ -89,12 +89,13 @@ class Account extends MX_Controller {
 			if($this->help_model->state_account($email)=="NO CONFIRMADO"){												//	VERIFICAMOS QUE EL EMAILRECIBIDO  SEA = "NO VALIDAD"
 				$aleatorio = $this->help_model->codigo_confirmacion($email);
 				echo "aleatorio: ".$aleatorio;
-				$mensaje = array(																														//	MENSAJE DEL CORREO
+				$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
 					'email' => $email,
 					'subject' => "ASUNTO DEL MENSAJE",
 					'message' => "TU CODIGO DE VERIFICACION ES: ".$aleatorio
 				 );
-				 $enviado = $this->enviar_mail($mensaje);
+				 //$enviado = $this->enviar_mail($mensaje);																		//	ENVIAR MENSAJE AL CORREO
+				 $enviado = $this->help_model->sendMailGmail($mensaje);
 				 $this->session->set_flashdata('response',$email);
 				 if ($enviado == 1) {																											//	SI EL MENSAJE FUE ENVIADO
 					 $this->form_validation->set_rules('codigo', 'Codigo de verificación', 'required');
@@ -155,14 +156,8 @@ class Account extends MX_Controller {
 			}
 
 			if ($this->register_model->save_noconfirmed($nombres,$apellidos,$email,$pass)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
-
-					//$this->session->set_flashdata('item',$_POST['email']);
 					$this->session->set_flashdata("response",$email);
 					redirect(base_url("/account/confirmate"));															//	REDIRIGIMOS PARA PODER VALIDAR LA CUENTA
-
-					//$this->load->view('validar');
-
-
 			}else {
 							//$this->session->set_flashdata("response","Registro Fallido!");
 							//redirect('#bad-password');
