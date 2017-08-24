@@ -150,13 +150,9 @@ class Account extends MX_Controller {
 			if ($this->help_model->unique_email($email)) {
 				redirect(base_url("/account#email_ existe"));														//	MOSTRAR MENSAJE DE ALERTA "EMAIL YA REGISTRADO"
 			}
-			$ale = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-			if ($this->register_model->save_noconfirmed($nombres,$apellidos,$email,$pass,$ale)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
-				$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
-					'email' => $email,
-					'subject' => "ASUNTO DEL MENSAJE",
-					'message' => "TU CODIGO DE VERIFICACION ES: ".$ale
-				);
+			$random = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			if ($this->register_model->save_noconfirmed($nombres,$apellidos,$email,$pass,$random)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
+				$mensaje = $this->plantilla_confirmar_email($email,$random);							//	LLENAMOS LA PLANTILLA COPN EL CODIGO
 				$this->help_model->sendMailGmail($mensaje);																//	ENVIAR MENSAJE AL CORREO
 				$this->session->set_flashdata("response",$email);
 				redirect(base_url("/account/confirmate"));															//	REDIRIGIMOS PARA PODER VALIDAR LA CUENTA
@@ -171,23 +167,18 @@ class Account extends MX_Controller {
  		$this->load->view('register');
 	}
 
+	public function plantilla_confirmar_email($e,$r){
+		$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
+			'email' => $e,
+			'subject' => "ASUNTO DEL MENSAJE",
+			'message' => "TU CODIGO DE VERIFICACION ES: ".$r
+		);
+		return $mensaje;
+	}
+
 	public function crear_btc(){
 		// POR IMPLEMENTAR
 
-	}
-
-	function enviar_mail($data){
-	 $this->email->from('jk.barrerac@up.edu.pe', 'Your Name');
-	 $this->email->to($data['email']);
-	 $this->email->subject($data['subject']);
-	 $this->email->message($data['message']);
-
-	 if ($this->email->send()) {
-		 return 1;																																	//	SOLO ENTRA SI SE ENVIO EL CORREO por ahora no fiunciona en el servidor se dice que si
-	 }else {
-		 echo $this->email->print_debugger();
-		 return 0;
-	 }
 	}
 
 
