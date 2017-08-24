@@ -9,7 +9,7 @@ class Register_model extends CI_Model {
         return $query->result();
   }
 
-  public function save_noconfirmed($nombres,$apellidos,$email,$pass){
+  public function save_noconfirmed($nombres,$apellidos,$email,$pass,$ale){
     $data = array(
       'fnameUsers' => $nombres,
       'lnameUsers' => $apellidos,
@@ -18,7 +18,7 @@ class Register_model extends CI_Model {
       'passUsers' => $pass,
       'stateUsers' => "NO CONFIRMADO",
       'dateUsers' => date("Y-m-d H:i:s"),
-      'auxUsers'=> rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9),
+      'auxUsers'=> $ale,
       'Prolifes_idProlifes' => 1
      );
     return $this->db->insert("Users",$data);

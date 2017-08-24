@@ -89,13 +89,9 @@ class Account extends MX_Controller {
 			if($this->help_model->state_account($email)=="NO CONFIRMADO"){												//	VERIFICAMOS QUE EL EMAILRECIBIDO  SEA = "NO VALIDAD"
 				$aleatorio = $this->help_model->codigo_confirmacion($email);
 				echo "aleatorio: ".$aleatorio;
-				$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
-					'email' => $email,
-					'subject' => "ASUNTO DEL MENSAJE",
-					'message' => "TU CODIGO DE VERIFICACION ES: ".$aleatorio
-				 );
-				 //$enviado = $this->enviar_mail($mensaje);																		//	ENVIAR MENSAJE AL CORREO
-				 $enviado = $this->help_model->sendMailGmail($mensaje);
+
+				$enviado = 1;
+				 //var_dump($this->email->print_debugger());
 				 $this->session->set_flashdata('response',$email);
 				 if ($enviado == 1) {																											//	SI EL MENSAJE FUE ENVIADO
 					 $this->form_validation->set_rules('codigo', 'Codigo de verificación', 'required');
@@ -154,10 +150,16 @@ class Account extends MX_Controller {
 			if ($this->help_model->unique_email($email)) {
 				redirect(base_url("/account#email_ existe"));														//	MOSTRAR MENSAJE DE ALERTA "EMAIL YA REGISTRADO"
 			}
-
-			if ($this->register_model->save_noconfirmed($nombres,$apellidos,$email,$pass)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
-					$this->session->set_flashdata("response",$email);
-					redirect(base_url("/account/confirmate"));															//	REDIRIGIMOS PARA PODER VALIDAR LA CUENTA
+			$ale = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			if ($this->register_model->save_noconfirmed($nombres,$apellidos,$email,$pass,$ale)){ //	USUARIO REGISTRADO EN LA BD EN ESTADO "NO CONFIRMADO"
+				$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
+					'email' => $email,
+					'subject' => "ASUNTO DEL MENSAJE",
+					'message' => "TU CODIGO DE VERIFICACION ES: ".$ale
+				);
+				$this->help_model->sendMailGmail($mensaje);																//	ENVIAR MENSAJE AL CORREO
+				$this->session->set_flashdata("response",$email);
+				redirect(base_url("/account/confirmate"));															//	REDIRIGIMOS PARA PODER VALIDAR LA CUENTA
 			}else {
 							//$this->session->set_flashdata("response","Registro Fallido!");
 							//redirect('#bad-password');
