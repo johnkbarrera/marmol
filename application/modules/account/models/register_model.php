@@ -3,10 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register_model extends CI_Model {
 
-
   public function getRecords(){
-        $query = $this->db->get("Users");
-        return $query->result();
+    $query = $this->db->get("Users");
+    return $query->result();
   }
 
   public function save_noconfirmed($nombres,$apellidos,$email,$pass,$ale){
@@ -29,10 +28,21 @@ class Register_model extends CI_Model {
       'stateUsers' => "CONFIRMADO",
       'auxUsers' => "0"
     );
+
     $this->db->where('emailUsers', $aemail);
     return $this->db->update('Users', $data);
   }
+  /*
+  public function lastRecordUserId($table){
+    $this->db->select('MAX(idUsers)');
+    return $this->db->get('Users');
+  }
+  */
 
-
-
+  public function nueva_wallet_btc($email,$data){    
+    $data['Users_emailUsers']=$email;
+    //$data['pass']=$pass;
+    //$data['Cryptocurrency_idCryptocurrency']='1';
+    return $this->db->insert('WBlockchain', $data);
+  }
 }
