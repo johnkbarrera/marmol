@@ -29,7 +29,7 @@ class WBTC
 		$this->Blockchain->setServiceUrl($this->servicio);
 	}
 
-	private public function generar_llave(){
+	private function generar_key(){
 		//Aqui se tiene que generar la clave de la billetera
 	}
 
@@ -40,7 +40,7 @@ class WBTC
 			$data=[
 				'guid'=>$wallet->guid,
 				'address'=>$wallet->address,
-				'password'=>'XapoBitinka2017', //$this->generar_llave();
+				'key'=>'XapoBitinka2017', //$this->generar_key();
 				'label'=>$wallet->label
 			];
 			return $data;

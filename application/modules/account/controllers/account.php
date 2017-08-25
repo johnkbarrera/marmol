@@ -182,7 +182,7 @@ class Account extends MX_Controller {
 	}
 
 	private function crear_wallet_btc($email){
-		/* El metodo crear_wbtc devuelve: 'guid','address','password','label' */
+		/* El metodo crear_wbtc() devuelve: 'guid','address','key','label' */
 		$this->register_model->nueva_wallet_btc($email,$this->wbtc->crear($pass));
 	}
 
@@ -195,25 +195,24 @@ class Account extends MX_Controller {
 			$recibe = $_POST['recibe'];
 
 			$credenciales =$this->account_model->credenciales($email);
-			//$guid,$pass,$to_address, $amount, $from_address,$fee=null
-			$resp = $this->wbtc->transferir($credenciales['guid'],$credenciales['password'],$to_address,$recibe,$fee);
-			$this->account_model->transferencias($to_address,$resp);
-			/* $resp devuelve estos 3 campos
-				 'message'
-				 'tx_hash'
-				 'notice'
-			*/
-			/*
-			if($saveItem){
-				$resp['valid'] = true;
-				$resp['msg'] = "Transacción exitosa!";
+			//$credenciales: ['guid','key']
+			$resp_transferir = $this->wbtc->transferir($credenciales['guid'],$credenciales['key'],$to_address,$recibe,$fee);
+			/* $resp : 'message','tx_hash' y 'notice' */
+			if($resp_transferir){
+				$res_transferencia=$this->account_model->transferencia($resp_transferir,$to_address,$monto,$fee);
+
+				if($res_transferencia){
+					$respuesta['valor']=true;
+					$respuesta['msg']="Transaccion exitosa!";
+				}else{
+					$respuesta['valor']=false;
+				}
+
+				return json_encode($respuesta);
 			}else{
-				$resp['valid'] = false;
+				$respuesta['valor']=false;				
 			}
-			echo json_encode($resp);
-			*/
+			return json_encode($respuesta);
 		}
 	}
-
-
 }

@@ -40,9 +40,7 @@ class Register_model extends CI_Model {
   */
 
   public function nueva_wallet_btc($email,$data){    
-    $data['Users_emailUsers']=$email;
-    //$data['pass']=$pass;
-    //$data['Cryptocurrency_idCryptocurrency']='1';
+    $data['email']=$email;
     return $this->db->insert('WBlockchain', $data);
   }
 }

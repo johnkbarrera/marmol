@@ -2,15 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Account_model extends CI_Model {
-	public function transferencias($id,$pass,$to_address,$amount,$fee){
-	    //Se inserta informacion en la tabala HistorialTransacciones
-	    //$this->credencialesWBTC()
+	
+	public function transferencia($data,$address,$monto,$fee){
+		$data['address']=$address;
+		$data['amount']=$monto;
+		$data['fee']=$fee;
+		$data['date']=date("Y-m-d H:i:s");
+		$this->db->insert("Transactions",$data);
     }
 
     public function credenciales($email){
-	    $this->db->select('guid, llave');
+	    $this->db->select('guid, key');
 	    $this->db->from('WBlockchain');
-	    $this->db->where('Users_emailUsers',$email);
+	    $this->db->where('email',$email);
 
 	    return $this->db->get();
 	}

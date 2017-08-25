@@ -39,15 +39,15 @@
                 </div>
                 <div class="form-group">
                   <label for="item-monto" class="form-control-label">Monto de Retiro</label>
-                  <input type="text" class="form-control" id="item-monto" placeholder="Cantidad" required="" autofocus="">  
+                  <input type="text" class="form-control" id="item-monto" placeholder="Cantidad" required="" autofocus="" value="0.0018">  
                 </div>
                 <div class="form-group">
                   <label for="item-fee" class="form-control-label">Fee</label>
-                  <input type="text" class="form-control" id="item-fee" disabled value="0.01">  
+                  <input type="text" class="form-control" id="item-fee" disabled value="0.0003">  
                 </div>
                 <div class="form-group">
                   <label for="item-recibe" class="form-control-label">Recibirá</label>
-                  <input type="text" class="form-control" id="item-recibe" disabled value="0">  
+                  <input type="text" class="form-control" id="item-recibe" disabled value="0.0015">  
                 </div>
 
                 <div class="form-group">
