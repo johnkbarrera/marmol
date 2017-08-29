@@ -140,8 +140,8 @@
                     </td>
                     <td>USD</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="USD">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="USD">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -149,8 +149,8 @@
                     </td>
                     <td>EUR</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="EUR">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="EUR">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -158,8 +158,8 @@
                     </td>
                     <td>ARS</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="ARS">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="ARS">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -167,8 +167,8 @@
                     </td>
                     <td>BOB</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BOB">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BOB">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -176,8 +176,8 @@
                     </td>
                     <td>BRL</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BRL">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BRL">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -185,16 +185,16 @@
                     </td>
                     <td>BSF</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BSF">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="BSF">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   <tr>
                     <td>
                       <img src="<?= base_url()?>plantillas/dist/img/currency/CLP.jpg">
                     </td>
                     <td>CLP</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CLP">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CLP">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -202,8 +202,8 @@
                     </td>
                     <td>CNY</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CNY">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="CNY">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -211,8 +211,8 @@
                     </td>
                     <td>COP</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="COP">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="COP">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                   <tr>
                     <td>
@@ -220,8 +220,8 @@
                     </td>
                     <td>PEN</td>
                     <td>0.00</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="PEN">Depósito</button></td>
-                    <td><button type="button" class="btn bg-navy margin">Retiro</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-moneda" data-whatever="PEN">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy">Retiro</button></td>
                   </tr>
                 </table>
               </div>
@@ -249,37 +249,37 @@
                       <img src="<?= base_url()?>plantillas/dist/img/currency/BTC.jpg">
                     </td>
                     <td>BTC</td>
-                    <td>0.00000000</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="BTC">Depósito</button></td>
-                    <td><button class="btn bg-navy margin" data-whatever="BTC" id="btn-retiro-btc">Retiro</button></td>
+                    <td><?php echo $balance ?></td>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="BTC">Depósito</button></td>
+                    <td><button type="button" class="btn btn-block bg-navy" id="btn-retiro-btc">Retiro</button></td>
                   </tr>
-                  <tr>
+                  <!--tr>
                     <td>
-                      <img src="<?= base_url()?>plantillas/dist/img/currency/ETH.jpg">
+                      <img src="<?php //echo base_url()?>plantillas/dist/img/currency/ETH.jpg">
                     </td>
                     <td>ETH</td>
                     <td>0.00000000</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="ETH">Depósito</button></td>
-                    <td><button class="btn bg-navy margin" data-whatever="ETH" id="btn-retiro-eth">Retiro</button></td>
-                  </tr>
-                  <tr>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="ETH">Depósito</button></td>
+                    <td><button class="btn btn-block bg-navy" data-whatever="ETH" id="btn-retiro-eth">Retiro</button></td>
+                  </tr-->
+                  <!--tr>
                     <td>
-                      <img src="<?= base_url()?>plantillas/dist/img/currency/LTC.jpg">
+                      <img src="<?php //echo base_url()?>plantillas/dist/img/currency/LTC.jpg">
                     </td>
                     <td>LTC</td>
                     <td>0.00000000</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="LTC">Depósito</button></td>
-                    <td><button class="btn bg-navy margin" data-whatever="LTC" id="btn-retiro-ltc">Retiro</button></td>
-                  </tr>
-                  <tr>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="LTC">Depósito</button></td>
+                    <td><button class="btn btn-block bg-navy" data-whatever="LTC" id="btn-retiro-ltc">Retiro</button></td>
+                  </tr-->
+                  <!--tr>
                     <td>
-                      <img src="<?= base_url()?>plantillas/dist/img/currency/XMR.jpg">
+                      <img src="<?php //echo base_url()?>plantillas/dist/img/currency/XMR.jpg">
                     </td>
                     <td>XMR</td>
                     <td>0.00000000</td>
-                    <td><button type="button" class="btn bg-navy margin" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="XMR">Depósito</button></td>
-                    <td><button class="btn bg-navy margin" data-whatever="XMR" id="btn-retiro-xmr">Retiro</button></td>
-                  </tr>
+                    <td><button type="button" class="btn btn-block bg-navy" data-toggle="modal" data-target="#modal-deposito-cripto" data-whatever="XMR">Depósito</button></td>
+                    <td><button class="btn btn-block bg-navy" data-whatever="XMR" id="btn-retiro-xmr">Retiro</button></td>
+                  </tr-->
                 </table>
               </div>
               <!-- /.box-body -->

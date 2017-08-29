@@ -3,6 +3,47 @@ function eMsg(params){
   alert("Error: "+params);
 }//end eMsg
 
+
+
+//$(document).ready(function(){
+//function calcular_btc_recibe() {
+function calcular_btc_recibe() {
+
+  var monto=parseFloat(document.getElementById('item-monto').value);
+  var fee=parseFloat(document.getElementById('item-fee').value);
+
+  if (isNaN(monto)) {monto=0;}
+  if (isNaN(fee)) {fee=0;}
+
+  var recibe=monto-fee;
+  if (recibe>=0) {    
+    document.getElementById('item-recibe').value=recibe.toPrecision(5)
+    //$('#item-recibe').val(recibe.toPrecision(5));
+  }else{
+    document.getElementById('item-recibe').value=0;
+    //$('#item-recibe').val(recibe.toPrecision(5));
+  }
+  
+
+/* 
+  $('#form-retiro-cripto').on('change', '#item-monto, #item-fee', function() {
+    var monto = $('#item-monto').val();
+    var fee = $('#item-fee').val();
+
+    if (isNaN(monto)) {monto = 0;}
+    if (isNaN(fee)) {fee = 0;}
+
+    recibe=monto-fee;
+
+    $('#item-recibe').val(recibe.toPrecision(5));
+  });
+*/
+    
+//}
+/* Act on the event */
+};
+
+
 //if((location.href).lastIndexOf('account')!=-1){
 $('#modal-deposito-moneda').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
@@ -20,6 +61,7 @@ $('#modal-deposito-cripto').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('Depósito ' + currency)  
 });
 
+
 $('#btn-retiro-btc').click(function(event) {
   /* Act on the event */
   $('#modal-retiro-cripto').find('.modal-title').text('Retiro en BTC');
@@ -33,6 +75,7 @@ $('#btn-retiro-eth').click(function(event) {
   $('#modal-retiro-cripto').modal('show');
   $('#submit-cripto').val('eth');
 });
+
 
 $('#btn-retiro-ltc').click(function(event) {
   /* Act on the event */
@@ -48,19 +91,23 @@ $('#btn-retiro-xmr').click(function(event) {
   $('#submit-cripto').val('xmr');
 });
 
+//console.log($("#item-id").val());
+var base_url = window.location.origin+'/marmol/';
+//console.log(base_url);
+
 $(document).on('submit', '#form-retiro-cripto', function(event) {
   event.preventDefault();
-  /* Act on the event */
-  //var id = $('#item-id').val(data.id); //id de la tabla de usuarios para recuperar el user y pass en el modelo
-  var email = Session["email"];
+  
+  var email = $("#item-id").val();
   var address = $('#item-address').val();
   var monto = $('#item-monto').val(); //$this->session->userdata('email')
   var fee = $('#item-fee').val();
   var recibe = $('#item-recibe').val();
-  
+
   if($('#submit-cripto').val() == "btc"){
+
     $.ajax({
-        url: '<?= base_url()?>account/retirarCripto.php',
+        url: base_url+'account/transferir_btc',
         type: 'post',
         dataType: 'json',
         data: {
@@ -69,22 +116,53 @@ $(document).on('submit', '#form-retiro-cripto', function(event) {
           monto:monto,
           fee:fee,
           recibe:recibe
-        },
-        success: function (data) {
-          console.log(data);
-          if(data.valor == true){
-            $('#modal-mensaje').find('#msg-body').text(data.msg);
-            $('#modal-retiro-cripto').modal('hide');
-            //ActualizarTranzacciones();
-            $('#modal-mensaje').modal('show');
-            $('#submit-cripto').val('null');
-          }
-        },
-        error: function(){
-          eMsg('Transaccion fallida!');
-        }//
+        }
+      }).done(function( data ) {
+
+        switch(data['estado']) {
+            case 1:
+                $("#modal-mensaje").removeClass("modal-warning");  
+                $("#modal-mensaje").addClass("modal-success");
+                $('#modal-mensaje').find('#modal-title').text("Transacción exitosa!");
+                $('#modal-mensaje').find('#msg-body').html(data['msg']);
+                $('#modal-retiro-cripto').modal('hide');
+                //ActualizarTranzacciones();
+                $('#modal-mensaje').modal('show');
+                $('#submit-cripto').val('null');
+                break;
+
+            case 2:                
+                $('#modal-mensaje').find('#modal-title').text("Transacción Fallida");
+                $('#modal-mensaje').find('#msg-body').text("Ingrese un valor correcto.");   
+                $('#modal-retiro-cripto').modal('hide');               
+                //ActualizarTranzacciones();
+                $('#modal-mensaje').modal('show');
+                $('#submit-cripto').val('null');
+                break;
+
+            case 3:                                
+                $('#modal-mensaje').find('#modal-title').text("Transacción Fallida");
+                $('#modal-mensaje').find('#msg-body').text("No cuenta con suficientes fondos.");   
+                $('#modal-retiro-cripto').modal('hide');                 
+                //ActualizarTranzacciones();
+                $('#modal-mensaje').modal('show');
+                $('#submit-cripto').val('null');
+                break;
+
+            case 4:
+                
+                $('#modal-mensaje').find('#msg-body').text("New Error: ");    
+                $('#modal-retiro-cripto').modal('hide');                
+                //ActualizarTranzacciones();
+                $('#modal-mensaje').modal('show');
+                $('#submit-cripto').val('null');
+                break;
+        }              
+   
       });
+    
   }//end if == "btc"
+
 });
 
 /*

@@ -23,6 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="<?= base_url()?>plantillas/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="<?= base_url()?>plantillas/dist/css/style.css">
+  
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +65,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="<?= base_url()?>plantillas/index2.html" class="logo">
+    <a href="<?= base_url()?>/account" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -180,14 +182,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="https://lh3.googleusercontent.com/3VsHI8kQgaPSvVzp8LXbUTmtESbHWTXL5HjnI690jxuBWy0Vw3sUA30rOz51bjGgXELZ=s85" class="user-image" alt="User Image">
+              <img src="http://192.168.1.13/marmol/plantillas/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="https://lh3.googleusercontent.com/3VsHI8kQgaPSvVzp8LXbUTmtESbHWTXL5HjnI690jxuBWy0Vw3sUA30rOz51bjGgXELZ=s85" class="img-circle" alt="User Image">
+                <img src="http://192.168.1.13/marmol/plantillas/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer

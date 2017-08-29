@@ -1,15 +1,15 @@
-<div class="modal fade" id="modal-mensaje">
-	<div class="modal-dialog">
+<div class="modal modal-warning  fade" id="modal-mensaje">
+	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Respuesta</h4>
+				<h3 class="modal-title text-center" id="modal-title">Respuesta</h3>
 			</div>
 			<div class="modal-body">
-				<h4 id="msg-body">Todo bien</h4>
+				<p id="msg-body">Todo bien</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="message-box-ok" class="btn btn-default" data-dismiss="modal">OK
+				<button type="button" id="message-box-ok" class="btn btn-outline btn-sm" data-dismiss="modal">OK
 				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 				</button>
 			</div>

@@ -26,7 +26,12 @@ $config['modules_locations'] = array(
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/marmol/'; //localhost:8080/marmool/      x          www.jkn.com
+//Revisar la IP de cada 
+$config['base_url'] = 'http://192.168.1.13/marmol/'; //-> casa Edson
+//$config['base_url'] = 'http://10.3.16.187/marmol/'; //-> CIUP 
+//$config['base_url'] = 'http://192.168.0.8/marmol/'; //->Camex
+//localhost:8080/marmool/      x          www.jkn.com
+//localhost/marmool/      x          www.jkn.com
 
 /*
 |--------------------------------------------------------------------------

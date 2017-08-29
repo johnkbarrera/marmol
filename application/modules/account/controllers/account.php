@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Account extends MX_Controller {
 
-
 	public function _construct(){
 		parent::_construct();
 	}
@@ -13,72 +12,24 @@ class Account extends MX_Controller {
 		//si no estoy logeado en session
 			redirect(base_url(login));
 		}else {
+			//$this->getBalance($this->session->userdata('email'));
+
+			$balance=$this->getBalance($this->session->userdata('email'));
+			//print_r($balance);
+			$address=$this->getAddress($this->session->userdata('email'));
+
+			$data=array(
+				'balance'=>$balance,
+				'address'=>$address,
+				'email'=>$this->session->userdata('email')
+			);
+			//print_r($address);
+			//echo $balance;
 			$this->load->view('guess/header');				
-			$this->load->view('index');
+			$this->load->view('index',$data);
 			$this->load->view('guess/footer');
 		}
-
- 	}
-
-	public function validate(){
-		/*if(!$this->session->userdata('email')){																			//si no estoy logeado en session
-			redirect(base_url(login));
-		}else {								*/
-
-		//  SI NO CONFIRMADO Y ALEATORIO = "NULO"
-		//		CREO aleatorio
-		// 		GUARDO EN DB DEL EMAIL
-		//  ENVIO ALEATORIO DE LA BD
-		//  ENVIO EMAIL
-
-
-		if ($_SESSION['aleatorio']=NULL) {
-			$enviado = 1;
-			$email = $_SESSION['email'];
-		}else {
-			# code...
-				$email = $_SESSION["response"];
-	 		 	$aleatorio = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-				echo "codigo: ".$aleatorio;																							// HASTA QUE ENVIEMOS UN MAIL DE VERDAD
-				$mensaje = array(
-		      'email' => $email,
-		      'subject' => "",
-		      'message' => "",
-		      'codigo' => $aleatorio
-		     );
-				 $enviado = $this->enviar_mail($mensaje);
-				 # code...
-	 		}
-
-			 if ($enviado == 1) {																											//	SI EL MENSAJE FUE ENVIADO
-
-				 $this->form_validation->set_rules('codigo', 'Codigo de verificación', 'required');
-
-				 if ($this->form_validation->run()){
-					 $cod_ver = $this->input->post('codigo');
-					 $cod_ant = $_SESSION["aleatorio"];
-					 echo "  aleatorio: ".$cod_ant." codigo: ".$cod_ver;
-					 if ($cod_ver == $cod_ant) {
-					 	//  CAMBIAR ESTADO A CONFIRMADO
-						//	ASIGNAR WALLETS al email
-						$this->session->set_flashdata("response","Cuenta Confirmada vamonos a login");
-						//redirect(base_url("/login"));
-					 }else {
-						$this->session->set_flashdata("response","Codigo Incorrecto");
-					}
-				 }
-
-			}else {																																		//SI EL MENSAJE NO FUE ENVIADO
-					$this->session->set_flashdata("response","Email no identificado");
-					//redirect(base_url("/account/register"));
-			}
-		//}
-		$_SESSION['aleatorio'] = $aleatorio;
-		$_SESSION['email'] = $email;
-		$this->session->keep_flashdata('aleatorio','email');
-		$this->load->view('validar');
-
- 	}
+ 	}	
 
 	public function confirmate(){
 		if(!$_SESSION["response"]){																		                          //si no estoy logeado en session
@@ -108,7 +59,7 @@ class Account extends MX_Controller {
  							$this->load->model('register_model');
 							$this->register_model->save_confirmed($email);						//  CAMBIAR ESTADO A CONFIRMADO
 							//	ASIGNAR WALLETS al email
-							$this->crear_wallet_btc($email); // Añadido por Edson
+							$this->crear_wallet_btc($email,"123456789"); // Añadido por Edson ----> password constante
 							$this->session->set_flashdata("response","Cuenta Confirmada");
 							redirect(base_url("/login"));
 						 }else {
@@ -129,7 +80,6 @@ class Account extends MX_Controller {
 	}
 
 	public function register(){
-
     	//$this->validador_propio->una_function(); // prueba
 
 		if($this->session->userdata('email')){ 																		  //SI ESTOY LOGEADO en session
@@ -167,52 +117,74 @@ class Account extends MX_Controller {
 							echo "erros datos no guardados";
 			}
 		}else {
-			echo validation_errors();																									//		Mensaje de alerta
+			echo validation_errors();//		Mensaje de alerta
 		}
  		$this->load->view('register');
 	}
 
 	public function plantilla_confirmar_email($e,$r){
-		$mensaje = array(																														//	Redactar MENSAJE DEL CORREO
+		$mensaje = array(																										//	Redactar MENSAJE DEL CORREO
 			'email' => $e,
 			'subject' => "ASUNTO DEL MENSAJE",
 			'message' => "TU CODIGO DE VERIFICACION ES: ".$r
 		);
 		return $mensaje;
 	}
-
-	private function crear_wallet_btc($email){
-		/* El metodo crear_wbtc() devuelve: 'guid','address','key','label' */
+	//crear_wallet_btc: devuelve array con las etiquetas 'guid','address','key' y 'label'
+	private function crear_wallet_btc($email,$pass){		
 		$this->register_model->nueva_wallet_btc($email,$this->wbtc->crear($pass));
 	}
 
 	public function transferir_btc(){
-		if(isset($_POST['email']) && isset($_POST['address']) && isset($_POST['monto'])){
-			$id = $_POST['email'];
-			$to_address = $_POST['address'];
-			$monto = $_POST['monto'];//->esto va para la base de datos
-			$fee = $_POST['fee'];
-			$recibe = $_POST['recibe'];
 
-			$credenciales =$this->account_model->credenciales($email);
-			//$credenciales: ['guid','key']
-			$resp_transferir = $this->wbtc->transferir($credenciales['guid'],$credenciales['key'],$to_address,$recibe,$fee);
-			/* $resp : 'message','tx_hash' y 'notice' */
-			if($resp_transferir){
-				$res_transferencia=$this->account_model->transferencia($resp_transferir,$to_address,$monto,$fee);
+		$email = $this->input->post('email');
+		$to_address = $this->input->post('address');
+		$monto = $this->input->post('monto');
+		$fee = $this->input->post('fee');
+		$recibe = $this->input->post('recibe');
 
-				if($res_transferencia){
-					$respuesta['valor']=true;
-					$respuesta['msg']="Transaccion exitosa!";
-				}else{
-					$respuesta['valor']=false;
-				}
 
-				return json_encode($respuesta);
-			}else{
-				$respuesta['valor']=false;				
+		$this->load->model('account_model');		
+		$credenciales = $this->account_model->credenciales($email);
+		$resp_transferir = $this->wbtc->transferir($credenciales['guid'],$credenciales['key'],$to_address,$recibe,$fee);
+		/*		
+		$resp_transferir = [
+			'message'=>'sxxxxxsiiabUUvuvuboBUVuvy8V889voV',
+			'tx_hash'=>'auiegr8272837283746gsdajbjbsdagsud',
+			'notice'=>'Enviado'
+			];
+		*/		
+		if(gettype($resp_transferir)=="string"){
+			if($resp_transferir=="2"){
+				$resp['estado']=2;
+				echo json_encode($resp);
 			}
-			return json_encode($respuesta);
+			if($resp_transferir=="3"){
+				$resp['estado']=3;
+				echo json_encode($resp);
+			}
+			if($resp_transferir=="4"){
+				$resp['estado']=4;
+				echo json_encode($resp);
+			}			
+		}else{
+			$this->load->model('account_model');
+			$this->account_model->transferencia($credenciales['idWBlockchain'],$resp_transferir,$to_address,$recibe,$fee);
+			$resp['estado']=1;
+			$resp['msg']="Has enviado a <strong>".$to_address."</strong> el monto de <strong>".$recibe." BTC</strong>";
+			echo json_encode($resp);
 		}
 	}
+
+	private function getBalance($email){
+		$this->load->model('account_model');
+		$credenciales=$this->account_model->credenciales($email);
+		return $this->wbtc->balance($credenciales['guid'],$credenciales['key']);
+	}
+
+	private function getAddress($email){
+		$this->load->model('account_model');
+		return ($this->account_model->getAddress($email))['address'];
+	}
+
 }

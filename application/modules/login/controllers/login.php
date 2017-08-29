@@ -33,13 +33,13 @@ class Login extends MX_Controller {
 			$pass = md5($this->input->post('pass'));
 
 			if($this->help_model->state_account($email)=="NO CONFIRMADO"){												//	VERIFICAMOS (X EMAIL) SI LA CUENTA A SIDO CONFIRMADA
-				$this->session->set_flashdata("response",$email);
+				$this->session->set_flashdata("response",$email);						
 				redirect(base_url("/account/confirmate"));								//llamamas a una fuincion para confirmar
 			}
 
 
 			if($this->usuario_model->login($_POST['email'],md5($_POST['pass']))){
-				$this->session->set_userdata('email',$_POST['email']);
+				$this->session->set_userdata(['email'=>$_POST['email'],'name'=>"nombre de prueba"]);							// CREAMOS LA SESSION
 				redirect(base_url(account));                                                    //redirecciona al panel del usuario
 			}else{
 				redirect('login#bad-password');

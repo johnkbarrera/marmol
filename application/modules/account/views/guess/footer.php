@@ -97,6 +97,7 @@
 <script src="<?= base_url()?>plantillas/dist/js/adminlte.min.js"></script>
 
 <script src="<?= base_url()?>plantillas/dist/js/account.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script-->
 
 </body>
 </html>

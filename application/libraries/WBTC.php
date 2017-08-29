@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 require_once('vendor/autoload.php');
 
 class WBTC
@@ -9,12 +8,14 @@ class WBTC
 	private $Blockchain; // *		
 	private $fee;
 	private $servicio;
+	private $label;
 	
 	function __construct(){
 		$this->api_code = "abdb42b4-6744-4897-8176-26316b4bd838";
 		$this->servicio = "http://localhost:3000";
 		$this->seg_pass = null;
-		$this->fee = 0.0003;				
+		$this->label = "Billetera Bitcoin";
+		$this->fee = 0.00038;				
 	}
 
 	private function iniciarConexionAPI(){
@@ -33,14 +34,15 @@ class WBTC
 		//Aqui se tiene que generar la clave de la billetera
 	}
 
+	//Crea una WalletBlockchain retorna 4 parametros tipo string: 'guid','address','key' y'label' 
 	public function crear($pass, $email=null){				
 		$this->iniciarConexionAPI();
 		try{
-			$wallet=$this->Blockchain->Create->create($pass,$email,$label);
+			$wallet=$this->Blockchain->Create->create($pass,$email,$this->label);
 			$data=[
 				'guid'=>$wallet->guid,
 				'address'=>$wallet->address,
-				'key'=>'XapoBitinka2017', //$this->generar_key();
+				'key'=>$pass, //$this->generar_crear();
 				'label'=>$wallet->label
 			];
 			return $data;
@@ -48,29 +50,46 @@ class WBTC
 		    echo $e->getMessage() . '<br />Error al crear Billertera Nueva';
 		}
 	}
-
+	//Valida 
 	public function credenciales($guid,$pass,$seg_pass=null){		
 		$this->iniciarConexionAPI();
 		$this->Blockchain->Wallet->credentials($guid,$pass,$seg_pass);		
 	}
 
-	public function transferir($guid,$pass,$to_address, $amount, $from_address,$fee=null){
+	//transferir: retorna los parametros 'message', 'tx_hash' y 'notice' si se realiza la transferencia o un 'string' con el tipo de error 
+	public function transferir($guid,$pass,$to_address, $amount,$fee=null){
 		$this->credenciales($guid,$pass);
-		$fee=$this->fee;
+		//$fee=$this->fee;
 		try {
-		    $rpta=$this->Blockchain->Wallet->send($to_address,$amount,$from_address,$fee);
-		    return $rpta;
+		    $res=$this->Blockchain->Wallet->send($to_address,$amount,null,$fee);
+		    $data=[
+		    	'message'=>$res->message,
+		    	'tx_hash'=>$res->tx_hash,
+		    	'notice'=>$res->notice
+		    ];
+
+		    return $data;
+
 		} catch (\Blockchain\Exception\ApiError $e) {
-		    echo $e->getMessage() . '<br /> Transferencia <br/>';
+		    $err=$e->getMessage();
+
+		    if ($err=='Error signing and pushing transaction') {
+		    	return "2";		    	
+		    }
+		    if ($err=='Unexpected error, please try again') {
+		    	return "3";
+		    }
+		    if (($err!="Error signing and pushing transaction") && ($err!="Unexpected error, please try again")) {
+		    	return "4";
+		    }
+		    
 		}
 	}
-
-	//Balance de la billetera
-	public function balance($guid,$pass){
-		$this->credenciales($guid,$pass);
-		return $Blockchain->Wallet->getBalance();
+	//balance: retorna un 'string' con el valor del balance del Wallet
+	public function balance($guid,$key){
+		$this->credenciales($guid,$key);
+		return $this->Blockchain->Wallet->getBalance();
 	}
-
 	/*
 	public function listarDirecciones($guid,$pass,$seg_pass=null){
 		$this->credenciales($guid,$pass,$seg_pass);
@@ -89,19 +108,7 @@ class WBTC
 		}
 	}
 	*/
-
-	/*
-	public function getGUID(){
-		return $this->guid;
-	}		
-	public function getAddress(){
-		return $this->address;
-	}
-	public function getLabel(){
-		return $this->label;
-	}
-	*/
-
+	
 	public function mensaje(){
 		return "Estoy en la libreria!";
 	}
