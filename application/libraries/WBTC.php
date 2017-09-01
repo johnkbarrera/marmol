@@ -11,8 +11,8 @@ class WBTC
 	private $label;
 	
 	function __construct(){
-		$this->api_code = "abdb42b4-6744-4897-8176-26316b4bd838";
-		$this->servicio = "http://localhost:3000";
+		$this->api_code = "";
+		$this->servicio = "";
 		$this->seg_pass = null;
 		$this->label = "Billetera Bitcoin";
 		$this->fee = 0.00038;				
